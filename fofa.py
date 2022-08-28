@@ -63,7 +63,7 @@ def init():
 
 def spider():
     searchWord = config.SearchKEY
-    email, key = ('email', 'key')
+    email, key = ('sbeshdhkzkstbcsglm@awdrt.org', 'b409f53e7d8a1918f5f937c6692fbe01')
     client = fofa.Client(email, key) 
     fo = open(sys.argv[1],"w+")
     while True:
@@ -74,13 +74,13 @@ def spider():
       for host in data["results"]:
         fo.write(host+"\n")
       fo.flush()
-      html = requests.get(url="https://fofa.info/result?qbase64=" + searchbs64, headers=config.headers).text
+      html = requests.get(url="https://fofa.info/result?qbase64=" + searchbs64+"&page=1000&page_size=10", headers=config.headers).text
       soup = BeautifulSoup(html, 'lxml')
       for item in (soup.body.findNext('div',{'class':'contentLeft'}).findAll('span')):
         if(item.text.find("20") == 0):
           time2 = (item.text)
           searchWord = config.SearchKEY + ' && before = "'+time2+'"'
-      time.sleep(10)
+      time.sleep(30)
 
 
 
