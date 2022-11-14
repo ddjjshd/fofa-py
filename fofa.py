@@ -63,7 +63,7 @@ def init():
 
 def spider():
     searchWord = config.SearchKEY
-    email, key = ('sbeshdhkzkstbcsglm@awdrt.org', 'b409f53e7d8a1918f5f937c6692fbe01')
+    email, key = ('*********', '('*********',')
     client = fofa.Client(email, key) 
     fo = open(sys.argv[1],"w+")
     while True:
